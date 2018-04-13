@@ -28,8 +28,8 @@ namespace SmartHotel.Views
             if (UserNameEntry.Text == "phahuynh" && Password.Text == "123456")
             {
                 //Chuyển qua trang mới
-                Navigation.PushAsync(new MainView());
-                //App.Current.MainPage = new NavigationPage(new MainView());
+              //  Navigation.PushAsync(new MainView());
+                App.Current.MainPage = new MainView();
             }
         }
     }

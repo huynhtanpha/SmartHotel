@@ -21,8 +21,8 @@ namespace SmartHotel.Views
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            if (Navigation.RemovePage(Navigation.NavigationStack[0]) is LoginView)
-                Navigation.RemovePage(Navigation.NavigationStack[0]);
+         //   if (Navigation.RemovePage(Navigation.NavigationStack[0]) is LoginView)
+           //     Navigation.RemovePage(Navigation.NavigationStack[0]);
         }
         private void Back_Clicked(object sender, EventArgs e)
         {

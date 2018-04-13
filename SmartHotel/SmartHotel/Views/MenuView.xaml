@@ -3,10 +3,63 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SmartHotel.Views.MenuView">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Grid
+            RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25*" />
+                <RowDefinition Height="75*" />
+            </Grid.RowDefinitions>
+            <Grid 
+                Grid.Row="0">
+
+                <Grid 
+                    BackgroundColor="#293849"
+                    Opacity="0.6"/>
+                <Image Source="avatar" Aspect="Fill"/>
+                <BoxView BackgroundColor="Black" Opacity="0.6"/>
+                <StackLayout Padding="44, 0, 0, 10" Spacing="0" Margin="-10, 75, 70, 10">
+                    <Label TextColor="White" Text="Hello, Pha"/>
+                </StackLayout>
+            </Grid>
+            <ScrollView Grid.Row="1">
+                <StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer x:Name="BookingRoom" />
+                        </StackLayout.GestureRecognizers>
+                        <Image Source="ic_bed"/>
+                        <Label Text="Book a room" VerticalOptions="Center"  FontSize="15"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer x:Name="MyRoom" />
+                        </StackLayout.GestureRecognizers>
+                        <Image Source="ic_key"/>
+                        <Label Text="My room" VerticalOptions="Center"  FontSize="15"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer x:Name="Suggesstion" />
+                        </StackLayout.GestureRecognizers>
+                        <Image Source="ic_beach"/>
+                        <Label Text="Suggesstion" VerticalOptions="Center"  FontSize="15"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer x:Name="Concierge" />
+                        </StackLayout.GestureRecognizers>
+                        <Image Source="ic_bot"/>
+                        <Label Text="Concierge" VerticalOptions="Center"  FontSize="15"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer x:Name="Logout" />
+                        </StackLayout.GestureRecognizers>
+                        <Image Source="ic_logout"/>
+                        <Label Text="Logout" VerticalOptions="Center" FontSize="15"/>
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
