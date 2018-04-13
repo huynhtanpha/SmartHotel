@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SmartHotel.Views.LoginView" BackgroundImage="bg_splash.png">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="TextColor">#ffffff</Color>
+            <Color x:Key="PlaceHolderColor">#cccccc</Color>
+            <Style x:Key="MyTextStyle" TargetType="Entry">
+                <Setter Property="TextColor" Value="{StaticResource TextColor}"    />
+                <Setter Property="PlaceholderColor" Value="{StaticResource PlaceHolderColor}"  />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <!--<StackLayout Orientation="Vertical" Padding="10,20" BackgroundColor="White" VerticalOptions="Center">
+            <Image Source="logo_splash.png" />
+            <Label Text="User Name"/>
+            <Entry Placeholder="User name"/>
+            <Label Text="Password"/>
+            <Entry Placeholder="Password" IsPassword="True"/>
+            <Button Text="Login"/>
+        </StackLayout>-->
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="6*"/>
+                <RowDefinition Height="4*"/>
+            </Grid.RowDefinitions>
+            <Image Source="img_header_background_1" Aspect="Fill"/>
+            <!--<Image>
+                <Image.Source>
+                    <OnPlatform>
+                        <On Platform="Android" Value="img_header_background_1"/>
+                        <On Platform="iOS" Value="Resource/img_header_background_1"/>
+                    </OnPlatform>
+                </Image.Source>
+            </Image>   -->
+            <Grid Padding="40,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="18"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="18"/>
+                </Grid.RowDefinitions>
+                <Image  Source="logo_splash.png" HorizontalOptions="Center" VerticalOptions="Center"/>
+                <Label Text="User Name" Grid.Row="1" TextColor="{StaticResource TextColor}" FontSize="Default" FontFamily="Arial"/>
+                <Entry x:Name="UserNameEntry" Style="{StaticResource MyTextStyle}" Placeholder="User name"  PlaceholderColor="{StaticResource PlaceHolderColor}" Grid.Row="2" TextColor="White"/>
+                <Label Text="Password" Grid.Row="3" TextColor="{StaticResource TextColor}" FontSize="Default" FontFamily="Arial"/>
+                <Entry x:Name="Password" Style="{StaticResource MyTextStyle}" Placeholder="Password"  PlaceholderColor="{StaticResource PlaceHolderColor}" IsPassword="True" Grid.Row="4" TextColor="White"/>
+                <Label Text="Forgot Password?" Grid.Row="5" HorizontalTextAlignment="End" TextColor="White">
+
+                </Label>
+
+            </Grid>
+            <Button x:Name="SignUp"  VerticalOptions="Start" BackgroundColor="White" Text="Sign In" Grid.Row="1" Margin="30,-30, 30, 0" HeightRequest="60"/>
+        </Grid>
+
+        <!--<Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="200"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="60"/>
+            </Grid.RowDefinitions>
+            <StackLayout Grid.ColumnSpan="2" BackgroundColor="Blue">
+            </StackLayout>
+            <StackLayout Grid.Row="1" Grid.Column="0" BackgroundColor="Yellow">
+            </StackLayout>
+            <StackLayout Grid.Row="1" Grid.Column="1" BackgroundColor="Green">
+            </StackLayout>
+            <StackLayout Grid.Row="2" Grid.Column="0" BackgroundColor="Aqua">
+            </StackLayout>
+            <StackLayout Grid.Row="2" Grid.Column="1" BackgroundColor="Black">
+            </StackLayout>
+            <StackLayout Grid.Row="3" Grid.Column="0" BackgroundColor="Brown">
+            </StackLayout>
+            <StackLayout Grid.Row="3" Grid.Column="1" BackgroundColor="Azure">
+            </StackLayout>
+        </Grid>
+         -->
+    </ContentPage.Content>
+</ContentPage>
