@@ -29,6 +29,7 @@ namespace SmartHotel.Views
             {
                 //Chuyển qua trang mới
                 Navigation.PushAsync(new MainView());
+                //App.Current.MainPage = new NavigationPage(new MainView());
             }
         }
     }

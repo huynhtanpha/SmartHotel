@@ -1,13 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SmartHotel.Views.MainView">
-    <ContentPage.Content>
+             xmlns:local="clr-namespace:SmartHotel.Views"
+             x:Class="SmartHotel.Views.MainView" MasterBehavior="Split">
+    <!--<ContentPage.Content>
         <StackLayout>
             <Label Text="Welcome to Xamarin.Forms!"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
             <Button x:Name="Back" Text="Back"/>
         </StackLayout>
-    </ContentPage.Content>
-</ContentPage>
+    </ContentPage.Content>-->
+    <MasterDetailPage.Master>
+        <!--<ContentPage Title="Menu"/>-->
+        <local:MenuView Title="Menu"/>
+    </MasterDetailPage.Master>
+    <MasterDetailPage.Detail>
+        <NavigationPage>
+            <x:Arguments>
+                <local:HomeView/>
+            </x:Arguments>
+        </NavigationPage>
+    </MasterDetailPage.Detail>
+</MasterDetailPage>

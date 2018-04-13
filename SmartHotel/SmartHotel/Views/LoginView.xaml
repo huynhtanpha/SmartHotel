@@ -45,9 +45,9 @@
                 </Grid.RowDefinitions>
                 <Image  Source="logo_splash.png" HorizontalOptions="Center" VerticalOptions="Center"/>
                 <Label Text="User Name" Grid.Row="1" TextColor="{StaticResource TextColor}" FontSize="Default" FontFamily="Arial"/>
-                <Entry x:Name="UserNameEntry" Style="{StaticResource MyTextStyle}" Placeholder="User name"  PlaceholderColor="{StaticResource PlaceHolderColor}" Grid.Row="2" TextColor="White"/>
+                <Entry Text="phahuynh" x:Name="UserNameEntry" Style="{StaticResource MyTextStyle}" Placeholder="User name"  PlaceholderColor="{StaticResource PlaceHolderColor}" Grid.Row="2" TextColor="White"/>
                 <Label Text="Password" Grid.Row="3" TextColor="{StaticResource TextColor}" FontSize="Default" FontFamily="Arial"/>
-                <Entry x:Name="Password" Style="{StaticResource MyTextStyle}" Placeholder="Password"  PlaceholderColor="{StaticResource PlaceHolderColor}" IsPassword="True" Grid.Row="4" TextColor="White"/>
+                <Entry Text="123456" x:Name="Password" Style="{StaticResource MyTextStyle}" Placeholder="Password"  PlaceholderColor="{StaticResource PlaceHolderColor}" IsPassword="True" Grid.Row="4" TextColor="White"/>
                 <Label Text="Forgot Password?" Grid.Row="5" HorizontalTextAlignment="End" TextColor="White">
 
                 </Label>
