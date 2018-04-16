@@ -1,9 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SmartHotel.Views.LoginView" BackgroundImage="bg_splash.png">
+             x:Class="SmartHotel.Views.LoginView" BackgroundImage="bg_splash.png"
+             xmlns:converters="clr-namespace:SmartHotel.Converters">
     <ContentPage.Resources>
         <ResourceDictionary>
+            <converters:PasswordStrengthToColorConverter x:Key="PasswordStrengthToColorConverter"/>
             <Color x:Key="TextColor">#ffffff</Color>
             <Color x:Key="PlaceHolderColor">#cccccc</Color>
             <Style x:Key="MyTextStyle" TargetType="Entry">
@@ -45,15 +47,28 @@
                 </Grid.RowDefinitions>
                 <Image  Source="logo_splash.png" HorizontalOptions="Center" VerticalOptions="Center"/>
                 <Label Text="User Name" Grid.Row="1" TextColor="{StaticResource TextColor}" FontSize="Default" FontFamily="Arial"/>
-                <Entry Text="phahuynh" x:Name="UserNameEntry" Style="{StaticResource MyTextStyle}" Placeholder="User name"  PlaceholderColor="{StaticResource PlaceHolderColor}" Grid.Row="2" TextColor="White"/>
-                <Label Text="Password" Grid.Row="3" TextColor="{StaticResource TextColor}" FontSize="Default" FontFamily="Arial"/>
-                <Entry Text="123456" x:Name="Password" Style="{StaticResource MyTextStyle}" Placeholder="Password"  PlaceholderColor="{StaticResource PlaceHolderColor}" IsPassword="True" Grid.Row="4" TextColor="White"/>
-                <Label Text="Forgot Password?" Grid.Row="5" HorizontalTextAlignment="End" TextColor="White">
+                <!--Binding data to entry-->
+                <Entry Text="{Binding Path=UserName, Mode=TwoWay}" x:Name="UserNameEntry" Style="{StaticResource MyTextStyle}" Placeholder="User name"  PlaceholderColor="{StaticResource PlaceHolderColor}" Grid.Row="2" TextColor="White"/>
 
-                </Label>
+                <Label Text="Password" Grid.Row="3" TextColor="{StaticResource TextColor}" FontSize="Default" FontFamily="Arial"/>
+
+                <!--Binding data to entry-->
+                <Entry Text="{Binding Path=Password}" x:Name="Password" Style="{StaticResource MyTextStyle}" Placeholder="Password"  PlaceholderColor="{StaticResource PlaceHolderColor}" IsPassword="True" Grid.Row="4" TextColor="White"/>
+                
+
+                <Label Text="Forgot Password?" Grid.Row="5" HorizontalTextAlignment="End" TextColor="White"/>
 
             </Grid>
             <Button x:Name="SignUp"  VerticalOptions="Start" BackgroundColor="White" Text="Sign In" Grid.Row="1" Margin="30,-30, 30, 0" HeightRequest="60"/>
+
+            <!--Binding View-->
+            <Grid Grid.Row="1">
+                <StackLayout VerticalOptions="Center" >
+                    <Label Text="{Binding Path=PasswordStrength}" TextColor="{Binding PasswordStrength, Converter={StaticResource PasswordStrengthToColorConverter}}"/>
+                    <Label Text="ABC" Rotation="{Binding Path=Value, Source={x:Reference slider}}"/>
+                    <Slider x:Name="slider" Maximum="360" Minimum="0"/>
+                </StackLayout>
+            </Grid>
         </Grid>
 
         <!--<Grid>
@@ -83,5 +98,6 @@
             </StackLayout>
         </Grid>
          -->
+
     </ContentPage.Content>
 </ContentPage>
