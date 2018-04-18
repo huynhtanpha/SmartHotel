@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SmartHotel.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,11 +16,34 @@ namespace SmartHotel.Views
         public MenuView()
         {
             InitializeComponent();
-            BookingRoom.Tapped += BookingRoom_Tapped;
-            MyRoom.Tapped += MyRoom_Tapped;
-            Suggesstion.Tapped += Suggesstion_Tapped;
-            Concierge.Tapped += Concierge_Tapped;
-            Logout.Tapped += Logout_Tapped;
+            BindingContext = new MenuViewModel();
+            menuListView.ItemSelected += MenuListView_ItemSelected;
+            //BookingRoom.Tapped += BookingRoom_Tapped;
+            //MyRoom.Tapped += MyRoom_Tapped;
+            //Suggesstion.Tapped += Suggesstion_Tapped;
+            //Concierge.Tapped += Concierge_Tapped;
+            //Logout.Tapped += Logout_Tapped;
+        }
+
+
+        private void MenuListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            if (menuListView.SelectedItem == null)
+                return;
+
+            menuListView.SelectedItem = null;
+
+            if (menuListView.SelectedItem.ToString().Equals("Book a room"))
+            {
+                if (Application.Current.MainPage is MainView mainView)
+                {
+                    if (mainView.Detail is NavigationPage navigationPage)
+                    {
+                        navigationPage.PushAsync(new BookingView());
+                        mainView.IsPresented = false;
+                    }
+                }
+            }
         }
 
         private void BookingRoom_Tapped(object sender, EventArgs e)

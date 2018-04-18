@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:tl="clr-namespace:SmartHotel.Views.Templates"
              x:Class="SmartHotel.Views.MenuView">
     <ContentPage.Content>
         <Grid
@@ -19,10 +20,19 @@
                 <BoxView BackgroundColor="Black" Opacity="0.6"/>
                 <StackLayout Padding="44, 0, 0, 10" Spacing="0" Margin="-10, 75, 70, 10">
                     <Label TextColor="White" Text="Hello, Pha"/>
+
                 </StackLayout>
             </Grid>
-            <ScrollView Grid.Row="1">
-                <StackLayout>
+            <ListView x:Name="menuListView"  Grid.Row="1" ItemsSource="{Binding Menu}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <tl:MenuItemTemplate/>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <!--<StackLayout>
                     <StackLayout Orientation="Horizontal">
                         <StackLayout.GestureRecognizers>
                             <TapGestureRecognizer x:Name="BookingRoom" />
@@ -58,8 +68,7 @@
                         <Image Source="ic_logout"/>
                         <Label Text="Logout" VerticalOptions="Center" FontSize="15"/>
                     </StackLayout>
-                </StackLayout>
-            </ScrollView>
+                </StackLayout>-->
         </Grid>
     </ContentPage.Content>
 </ContentPage>
