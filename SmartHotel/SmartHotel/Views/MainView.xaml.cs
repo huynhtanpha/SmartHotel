@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SmartHotel.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,6 +17,20 @@ namespace SmartHotel.Views
         {
             InitializeComponent();
             //Back.Clicked += Back_Clicked;
+            //Call dependency service
+            var serviceEmail = DependencyService.Get<IEmailService>();
+            serviceEmail.Send("abc@gmail.com", "Hello", "Hello kun");
+            buttonBasicMap.Clicked += (_, e) => Navigation.PushAsync(new BasicMapPage());
+            buttonCamera.Clicked += (_, e) => Navigation.PushAsync(new CameraPage());
+            buttonPins.Clicked += (_, e) => Navigation.PushAsync(new PinsPage());
+            buttonShapes.Clicked += (_, e) => Navigation.PushAsync(new ShapesPage());
+            buttonShapes2.Clicked += (_, e) => Navigation.PushAsync(new Shapes2Page());
+            buttonTiles.Clicked += (_, e) => Navigation.PushAsync(new TilesPage());
+            buttonCustomPins.Clicked += (_, e) => Navigation.PushAsync(new CustomPinsPage());
+            buttonShapesWithInitialize.Clicked += (_, e) => Navigation.PushAsync(new ShapesWithInitializePage());
+            buttonBindingPin.Clicked += (_, e) => Navigation.PushAsync(new BindingPinViewPage());
+            buttonGroundOverlays.Clicked += (_, e) => Navigation.PushAsync(new GroundOverlaysPage());
+            buttonMapStyles.Clicked += (_, e) => Navigation.PushAsync(new MapStylePage());
         }
 
         protected override void OnAppearing()

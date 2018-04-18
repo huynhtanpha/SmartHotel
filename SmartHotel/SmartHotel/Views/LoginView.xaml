@@ -46,14 +46,16 @@
                     <RowDefinition Height="18"/>
                 </Grid.RowDefinitions>
                 <Image  Source="logo_splash.png" HorizontalOptions="Center" VerticalOptions="Center"/>
-                <Label Text="User Name" Grid.Row="1" TextColor="{StaticResource TextColor}" FontSize="Default" FontFamily="Arial"/>
-                <!--Binding data to entry-->
-                <Entry Text="{Binding Path=UserName, Mode=TwoWay}" x:Name="UserNameEntry" Style="{StaticResource MyTextStyle}" Placeholder="User name"  PlaceholderColor="{StaticResource PlaceHolderColor}" Grid.Row="2" TextColor="White"/>
+                <Label Text="User Name" Grid.Row="1" TextColor="{StaticResource TextColor}" FontSize="Default" FontFamily="{StaticResource PoppinsRegular}"/>
 
-                <Label Text="Password" Grid.Row="3" TextColor="{StaticResource TextColor}" FontSize="Default" FontFamily="Arial"/>
 
                 <!--Binding data to entry-->
-                <Entry Text="{Binding Path=Password}" x:Name="Password" Style="{StaticResource MyTextStyle}" Placeholder="Password"  PlaceholderColor="{StaticResource PlaceHolderColor}" IsPassword="True" Grid.Row="4" TextColor="White"/>
+                <Entry Text="{Binding Path=UserName, Mode=TwoWay}" x:Name="UserNameEntry" FontSize="{StaticResource LittleSize}" Style="{StaticResource MyTextStyle}" Placeholder="User name" FontFamily="{StaticResource PoppinsRegular}" PlaceholderColor="{StaticResource PlaceHolderColor}" Grid.Row="2" TextColor="White"/>
+
+                <Label Text="Password" Grid.Row="3" TextColor="{StaticResource TextColor}" FontSize="Default" FontFamily="{StaticResource PoppinsRegular}"/>
+
+                <!--Binding data to entry-->
+                <Entry Text="{Binding Path=Password}" x:Name="Password" FontSize="{StaticResource LittleSize}" Style="{StaticResource MyTextStyle}" Placeholder="Password" FontFamily="{StaticResource PoppinsRegular}" PlaceholderColor="{StaticResource PlaceHolderColor}" IsPassword="True" Grid.Row="4" TextColor="White"/>
                 
 
                 <Label Text="Forgot Password?" Grid.Row="5" HorizontalTextAlignment="End" TextColor="White"/>
@@ -64,9 +66,15 @@
             <!--Binding View-->
             <Grid Grid.Row="1">
                 <StackLayout VerticalOptions="Center" >
-                    <Label Text="{Binding Path=PasswordStrength}" TextColor="{Binding PasswordStrength, Converter={StaticResource PasswordStrengthToColorConverter}}"/>
+                    <!--<Label Text="{Binding Path=PasswordStrength}" TextColor="{Binding PasswordStrength, Converter={StaticResource PasswordStrengthToColorConverter}}"/>
                     <Label Text="ABC" Rotation="{Binding Path=Value, Source={x:Reference slider}}"/>
-                    <Slider x:Name="slider" Maximum="360" Minimum="0"/>
+                    <Slider x:Name="slider" Maximum="360" Minimum="0"/>-->
+                    <Button x:Name="takePhoto" Text="Take Photo"/>
+                    <Button x:Name="pickPhoto" Text="Pick Photo"/>
+                    <Button x:Name="takeVideo" Text="Take Video"/>
+                    <Button x:Name="pickVideo" Text="Pick Video"/>
+
+                    <Image x:Name="image"/>
                 </StackLayout>
             </Grid>
         </Grid>

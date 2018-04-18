@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-
+using FFImageLoading.Forms.Touch;
 using Foundation;
 using UIKit;
 
@@ -23,6 +23,8 @@ namespace SmartHotel.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
+            CachedImageRenderer.Init();
+            Xamarin.FormsGoogleMaps.Init("your_google_maps_ios_api_key");
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);
