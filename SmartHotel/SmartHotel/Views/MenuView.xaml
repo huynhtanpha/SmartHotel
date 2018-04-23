@@ -23,7 +23,7 @@
 
                 </StackLayout>
             </Grid>
-            <ListView x:Name="menuListView"  Grid.Row="1" ItemsSource="{Binding Menu}">
+            <!--<ListView x:Name="menuListView"  Grid.Row="1" ItemsSource="{Binding Menu}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -31,8 +31,9 @@
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
-            </ListView>
-            <!--<StackLayout>
+            </ListView>--> 
+          
+            <StackLayout Grid.Row="1">
                     <StackLayout Orientation="Horizontal">
                         <StackLayout.GestureRecognizers>
                             <TapGestureRecognizer x:Name="BookingRoom" />
@@ -68,7 +69,7 @@
                         <Image Source="ic_logout"/>
                         <Label Text="Logout" VerticalOptions="Center" FontSize="15"/>
                     </StackLayout>
-                </StackLayout>-->
+                </StackLayout>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

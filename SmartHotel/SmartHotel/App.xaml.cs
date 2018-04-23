@@ -3,7 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using SmartHotel.Services.Navigation;
+using SmartHotel.ViewModels;
 using Xamarin.Forms;
 
 namespace SmartHotel
@@ -13,8 +14,10 @@ namespace SmartHotel
 		public App ()
 		{
 			InitializeComponent();
-            MainPage = new NavigationPage(new LoginView());
-			//MainPage = new SmartHotel.MainPage();
+            ServiceLocator.Instance.Build();
+		    ServiceLocator.Instance.Resolve<INavigationService>().NavigateToAsync<LoginViewModel>();
+		    //MainPage = new NavigationPage(new LoginView());
+		    //MainPage = new SmartHotel.MainPage();
 		}
 
 		protected override void OnStart ()

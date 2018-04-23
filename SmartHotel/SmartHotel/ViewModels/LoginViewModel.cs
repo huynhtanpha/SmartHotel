@@ -2,75 +2,54 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
+using SmartHotel.Mvvm.Commands;
+using SmartHotel.Services;
+using SmartHotel.ViewModels.Base;
 
 namespace SmartHotel.ViewModels
 {
-    public class LoginViewModel : INotifyPropertyChanged
+    public class LoginViewModel : ViewModelBase
     {
         private string _userName;
         private string _password;
-        private string _passwordStrength;
+        //private string _passwordStrength;
         public string UserName
         {
             get => _userName;
-            set
-            {
-                if (_userName != value)
-                {
-                    _userName = value;
-                    if (PropertyChanged != null)
-                    {
-                        RaisePropertyChanged(nameof(UserName));
-                    }
-                }
-            }
+            set => SetProperty(ref _userName, value, ()=>{LoginCommand.RaiseCanExecuteChanged();});
+
         }
 
-        private void RaisePropertyChanged(string propertyName)
+        public LoginViewModel()
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            LoginCommand = new DelegateCommand(Login, CanLogin).ObservesProperty(() => UserName)
+                .ObservesProperty(() => Password);
         }
 
-        public string PasswordStrength {
-            get => _passwordStrength;
-            set
-            {
-                if (_passwordStrength != value)
-                {
-                    _passwordStrength = value;
-                    if (PropertyChanged != null)
-                    {
-                        RaisePropertyChanged(nameof(PasswordStrength));
-                    }
-                }
-            }
+        private void Login()
+        {
+           //TODO
+            NavigationService.NavigateToAsync<MainViewModel>();
         }
+
+        private bool CanLogin()
+        {
+            return !string.IsNullOrEmpty(UserName) && !string.IsNullOrEmpty(Password);
+        }
+
         public string Password
         {
             get => _password;
-            set
-            {
-                if (_password != value)
-                {
-                    _password = value;
-                    if (PropertyChanged != null)
-                    {
-                        RaisePropertyChanged(nameof(Password));
-                        if (_password != null && _password.Length >= 6)
-                            PasswordStrength = "Good";
-                        else
-                            PasswordStrength = "Invalid";
-                    }
-                }
-            }
+            set => SetProperty(ref _password, value, ()=>{LoginCommand.RaiseCanExecuteChanged();});
+
+        }
+ 
+        public  DelegateCommand LoginCommand { get; }
+        public void SetUserName(string value)
+        {
+            UserName = value;
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
 
-        //public void SetUserName(string value)
-        //{
-        //    UserName = value;
-
-        //}
     }
 }

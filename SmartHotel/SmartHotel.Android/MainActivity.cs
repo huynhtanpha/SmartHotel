@@ -27,6 +27,8 @@ namespace SmartHotel.Droid
             CachedImageRenderer.Init(true);
             Xamarin.FormsGoogleMaps.Init(this, bundle); // initialize for Xamarin.Forms.GoogleMaps
             global::Xamarin.Forms.Forms.Init(this, bundle);
+
+            //ServiceLocator.Instance.Register<>();
             LoadApplication(new App());
         }
 

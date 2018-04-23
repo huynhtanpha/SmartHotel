@@ -61,7 +61,7 @@
                 <Label Text="Forgot Password?" Grid.Row="5" HorizontalTextAlignment="End" TextColor="White"/>
 
             </Grid>
-            <Button x:Name="SignUp"  VerticalOptions="Start" BackgroundColor="White" Text="Sign In" Grid.Row="1" Margin="30,-30, 30, 0" HeightRequest="60"/>
+            <Button x:Name="SignUp" Command="{Binding LoginCommand}"  VerticalOptions="Start" BackgroundColor="White" Text="Sign In" Grid.Row="1" Margin="30,-30, 30, 0" HeightRequest="60"/>
 
             <!--Binding View-->
             <Grid Grid.Row="1">
@@ -69,12 +69,12 @@
                     <!--<Label Text="{Binding Path=PasswordStrength}" TextColor="{Binding PasswordStrength, Converter={StaticResource PasswordStrengthToColorConverter}}"/>
                     <Label Text="ABC" Rotation="{Binding Path=Value, Source={x:Reference slider}}"/>
                     <Slider x:Name="slider" Maximum="360" Minimum="0"/>-->
-                    <Button x:Name="takePhoto" Text="Take Photo"/>
+                    <!--<Button x:Name="takePhoto" Text="Take Photo"/>
                     <Button x:Name="pickPhoto" Text="Pick Photo"/>
                     <Button x:Name="takeVideo" Text="Take Video"/>
                     <Button x:Name="pickVideo" Text="Pick Video"/>
 
-                    <Image x:Name="image"/>
+                    <Image x:Name="image"/>-->
                 </StackLayout>
             </Grid>
         </Grid>
