@@ -7,7 +7,7 @@
   
     <MasterDetailPage.Master>
         <!--<ContentPage Title="Menu"/>-->
-        <local:MenuView Title="Menu"/>
+        <local:MenuView Title="Menu" BindingContext="{Binding MenuViewModel} "/>
     </MasterDetailPage.Master>
     <MasterDetailPage.Detail>
         <NavigationPage>

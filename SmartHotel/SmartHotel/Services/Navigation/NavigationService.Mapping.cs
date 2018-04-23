@@ -15,6 +15,7 @@ namespace SmartHotel.Services.Navigation
             Map<LoginViewModel, LoginView>();
             Map<HomeViewModel, HomeView>();
             Map<MainViewModel, MainView>();
+            Map<BookingViewModel, BookingView>();
         }
         private void Map<TViewModel, TView>() where TViewModel : ViewModelBase where TView : Page
         {

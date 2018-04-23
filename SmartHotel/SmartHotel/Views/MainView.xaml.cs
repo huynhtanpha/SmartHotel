@@ -33,16 +33,16 @@ namespace SmartHotel.Views
             //buttonMapStyles.Clicked += (_, e) => Navigation.PushAsync(new MapStylePage());
         }
 
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
-         //   if (Navigation.RemovePage(Navigation.NavigationStack[0]) is LoginView)
-           //     Navigation.RemovePage(Navigation.NavigationStack[0]);
-        }
-        private void Back_Clicked(object sender, EventArgs e)
-        {
-            //chuyển về trang trước đó
-            Navigation.PopAsync();
-        }
+        //protected override void OnAppearing()
+        //{
+        //    base.OnAppearing();
+        // //   if (Navigation.RemovePage(Navigation.NavigationStack[0]) is LoginView)
+        //   //     Navigation.RemovePage(Navigation.NavigationStack[0]);
+        //}
+        //private void Back_Clicked(object sender, EventArgs e)
+        //{
+        //    //chuyển về trang trước đó
+        //    Navigation.PopAsync();
+        //}
     }
 }

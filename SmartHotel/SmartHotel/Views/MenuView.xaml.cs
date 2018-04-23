@@ -26,79 +26,79 @@ namespace SmartHotel.Views
 
         }
 
+        /*
+        private void MenuListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            if (menuListView.SelectedItem == null)
+                return;
 
-        //private void MenuListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
-        //{
-        //    if (menuListView.SelectedItem == null)
-        //        return;
+            menuListView.SelectedItem = null;
 
-        //    menuListView.SelectedItem = null;
+            switch (menuListView.SelectedItem.ToString())
+            {
 
-        //    switch (menuListView.SelectedItem.ToString())
-        //    {
+                case "Book a room":
 
-        //        case "Book a room":
+                    if (Application.Instance.MainPage is MainView mainView1)
+                    {
+                        if (mainView1.Detail is NavigationPage navigationPage)
+                        {
+                            navigationPage.PushAsync(new BookingView());
+                            mainView1.IsPresented = false;
+                        }
+                    }
+                    break;
 
-        //            if (Application.Instance.MainPage is MainView mainView1)
-        //            {
-        //                if (mainView1.Detail is NavigationPage navigationPage)
-        //                {
-        //                    navigationPage.PushAsync(new BookingView());
-        //                    mainView1.IsPresented = false;
-        //                }
-        //            }
-        //            break;
-
-        //        case "My room":
-        //            {
-        //                if (Application.Instance.MainPage is MainView mainView2)
-        //                {
-        //                    if (mainView2.Detail is NavigationPage navigationPage)
-        //                    {
-        //                        navigationPage.PushAsync(new MyRoomView());
-        //                        mainView2.IsPresented = false;
-        //                    }
-        //                }
-        //            }
-        //            break;
+                case "My room":
+                    {
+                        if (Application.Instance.MainPage is MainView mainView2)
+                        {
+                            if (mainView2.Detail is NavigationPage navigationPage)
+                            {
+                                navigationPage.PushAsync(new MyRoomView());
+                                mainView2.IsPresented = false;
+                            }
+                        }
+                    }
+                    break;
 
 
-        //        case "Suggestion":
-        //            if (Application.Instance.MainPage is MainView mainView3)
-        //            {
-        //                if (mainView3.Detail is NavigationPage navigationPage)
-        //                {
-        //                    navigationPage.PushAsync(new SuggesstionView());
-        //                    mainView3.IsPresented = false;
-        //                }
-        //            }
-        //            break;
-        //        case "Concierge":
-        //            if (Application.Instance.MainPage is MainView mainView4)
-        //            {
-        //                if (mainView4.Detail is NavigationPage navigationPage)
-        //                {
-        //                    navigationPage.PushAsync(new ConciergeView());
-        //                    mainView4.IsPresented = false;
-        //                }
-        //            }
-        //            break;
-        //        case "Logout":
+                case "Suggestion":
+                    if (Application.Instance.MainPage is MainView mainView3)
+                    {
+                        if (mainView3.Detail is NavigationPage navigationPage)
+                        {
+                            navigationPage.PushAsync(new SuggesstionView());
+                            mainView3.IsPresented = false;
+                        }
+                    }
+                    break;
+                case "Concierge":
+                    if (Application.Instance.MainPage is MainView mainView4)
+                    {
+                        if (mainView4.Detail is NavigationPage navigationPage)
+                        {
+                            navigationPage.PushAsync(new ConciergeView());
+                            mainView4.IsPresented = false;
+                        }
+                    }
+                    break;
+                case "Logout":
 
-        //            if (Application.Instance.MainPage is MainView mainView5)
-        //            {
-        //                if (mainView5.Detail is NavigationPage navigationPage)
-        //                {
-        //                    navigationPage.PushAsync(new LoginView());
-        //                    mainView5.IsPresented = false;
-        //                }
-        //            }
-        //            break;
-        //        default:
-        //            break;
-        //    }
+                    if (Application.Instance.MainPage is MainView mainView5)
+                    {
+                        if (mainView5.Detail is NavigationPage navigationPage)
+                        {
+                            navigationPage.PushAsync(new LoginView());
+                            mainView5.IsPresented = false;
+                        }
+                    }
+                    break;
+                default:
+                    break;
+            }
 
-        //}
+        }              */
 
         private void BookingRoom_Tapped(object sender, EventArgs e)
         {

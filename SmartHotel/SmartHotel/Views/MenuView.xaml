@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:tl="clr-namespace:SmartHotel.Views.Templates"
+             xmlns:tl="clr-namespace:SmartHotel.Views.Templates"  
+             xmlns:behavior="clr-namespace:SmartHotel.Behaviors"
              x:Class="SmartHotel.Views.MenuView">
     <ContentPage.Content>
         <Grid
@@ -23,7 +24,9 @@
 
                 </StackLayout>
             </Grid>
-            <!--<ListView x:Name="menuListView"  Grid.Row="1" ItemsSource="{Binding Menu}">
+            <!--<ListView  
+                behavior:ItemTappedCommandListView.ItemTappedCommand="{Binding MenuCommand}" 
+                Grid.Row="1" ItemsSource="{Binding Menu}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
