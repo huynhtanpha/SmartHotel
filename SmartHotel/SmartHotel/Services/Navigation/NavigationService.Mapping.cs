@@ -14,12 +14,12 @@ namespace SmartHotel.Services.Navigation
         {
             Map<LoginViewModel, LoginView>();
             Map<HomeViewModel, HomeView>();
-            //Map<MainViewModel, MainView>();
-            _mappings.Add(typeof(MainViewModel), typeof(MainView));
+            Map<MainViewModel, MainView>();
         }
         private void Map<TViewModel, TView>() where TViewModel : ViewModelBase where TView : Page
         {
             _mappings.Add(typeof(TViewModel), typeof(TView));
+
 
         }
     }

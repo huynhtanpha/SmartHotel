@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SmartHotel.Views.LoginView" BackgroundImage="bg_splash.png"
+             x:Class="SmartHotel.Views.LoginView" 
              xmlns:converters="clr-namespace:SmartHotel.Converters">
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -44,6 +44,8 @@
                     <RowDefinition Height="18"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="18"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
                 <Image  Source="logo_splash.png" HorizontalOptions="Center" VerticalOptions="Center"/>
                 <Label Text="User Name" Grid.Row="1" TextColor="{StaticResource TextColor}" FontSize="Default" FontFamily="{StaticResource PoppinsRegular}"/>

@@ -3,42 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:SmartHotel.Views"
              xmlns:tt="clr-namespace:FFImageLoading;assembly=FFImageLoading.Platform"
-             x:Class="SmartHotel.Views.MainView" MasterBehavior="Split">
-    <!--<ContentPage.Content>
-        <ScrollView Orientation="Vertical"
-                HorizontalOptions="Fill"
-                VerticalOptions="Fill">
-
-            <StackLayout
-                HorizontalOptions="Fill"
-                VerticalOptions="Start"
-                Orientation="Vertical">
-
-                <Button x:Name="buttonBasicMap"
-                        Text="Basic Map" />
-                <Button x:Name="buttonCamera"
-                        Text="Camera Control" />
-                <Button x:Name="buttonPins"
-                        Text="Pins" />
-                <Button x:Name="buttonShapes"
-                        Text="Shapes" />
-                <Button x:Name="buttonShapes2"
-                        Text="Shapes2" />
-                <Button x:Name="buttonTiles"
-                        Text="Tiles" />
-                <Button x:Name="buttonCustomPins"
-                        Text="Custom Pin" />
-                <Button x:Name="buttonShapesWithInitialize"
-                        Text="Shapes with initialize" />
-                <Button x:Name="buttonBindingPin"
-                        Text="Binding Pin" />
-                <Button x:Name="buttonGroundOverlays"
-                        Text="GroundOverlays" />
-                <Button x:Name="buttonMapStyles"
-                        Text="Map Styles" />
-            </StackLayout>
-        </ScrollView>
-    </ContentPage.Content>-->
+             x:Class="SmartHotel.Views.MainView" >
+  
     <MasterDetailPage.Master>
         <!--<ContentPage Title="Menu"/>-->
         <local:MenuView Title="Menu"/>
