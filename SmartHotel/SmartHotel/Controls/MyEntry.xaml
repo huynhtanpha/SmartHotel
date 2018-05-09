@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SmartHotel.Controls.MyEntry"
+             x:Name="Root">
+    <ContentView.Content>
+        <StackLayout>
+            <Label Text="Username"  TextColor="White" FontSize="Default" FontFamily="{StaticResource PoppinsRegular}"/>
+            <Entry Text="{Binding Source={x:Reference Root}, Path=Text, Mode=TwoWay}" TextColor="White" FontSize="{StaticResource LittleSize}" 
+                 Placeholder="Username" FontFamily="{StaticResource PoppinsRegular}"/>
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 using SmartHotel.ViewModels.Base;
 using SmartHotel.Views;
@@ -34,29 +33,21 @@ namespace SmartHotel.Services.Navigation
 
         public async Task NavigateToAsync(Type viewModelType, object parameter)
         {
-            try
+            var pageType = _mappings[viewModelType];
+            var page = (Page)Activator.CreateInstance(pageType);
+
+            var viewModel = page.BindingContext = ServiceLocator.Instance.Resolve(viewModelType);
+
+            if (page is LoginView)
             {
-                var pageType = _mappings[viewModelType];
-                var page = (Page)Activator.CreateInstance(pageType);
+                Application.Current.MainPage = new NavigationPage(page);
 
-                var viewModel = page.BindingContext = ServiceLocator.Instance.Resolve(viewModelType);
-
-                if (page is LoginView)
-                {
-                    Application.Current.MainPage = new NavigationPage(page);
-
-                }
-                else if (page is MainView)
-                {
-                    Application.Current.MainPage = page;
-                }
-                await ((ViewModelBase)viewModel).InitializeAsync(parameter);
             }
-            catch (Exception ex)
+            else if (page is MainView)
             {
-
-                throw;
+                Application.Current.MainPage = page;
             }
+            await ((ViewModelBase)viewModel).InitializeAsync(parameter);
             //return Task.CompletedTask;
         }
 

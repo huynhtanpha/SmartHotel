@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using Autofac;
+using SmartHotel.Services.Authentications;
 using SmartHotel.Services.Navigation;
 using SmartHotel.ViewModels;
 
@@ -22,7 +23,8 @@ namespace SmartHotel
         public ServiceLocator()
         {
             _containerBuilder = new ContainerBuilder();
-              RegisterInstance<INavigationService, NavigationService>();
+            RegisterInstance<INavigationService, NavigationService>();
+            RegisterInstance<IAuthenticationService, FakeAuthenticationService>();
             _containerBuilder.RegisterType<LoginViewModel>();
             _containerBuilder.RegisterType<MainViewModel>();
             _containerBuilder.RegisterType<HomeViewModel>();

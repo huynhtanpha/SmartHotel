@@ -1,7 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SmartHotel.Views.LoginView" 
+             x:Class="SmartHotel.Views.LoginView"   
+             xmlns:controls="clr-namespace:SmartHotel.Controls" 
+             xmlns:effects ="clr-namespace:SmartHotel.Effects"
              xmlns:converters="clr-namespace:SmartHotel.Converters">
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -26,44 +28,49 @@
 
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="6*"/>
-                <RowDefinition Height="4*"/>
+                <RowDefinition Height="7*"/>
+                <RowDefinition Height="3*"/>
             </Grid.RowDefinitions>
             <Image Source="img_header_background_1" Aspect="Fill"/>
-            <!--<Image>
-                <Image.Source>
-                    <OnPlatform>
-                        <On Platform="Android" Value="img_header_background_1"/>
-                        <On Platform="iOS" Value="Resource/img_header_background_1"/>
-                    </OnPlatform>
-                </Image.Source>
-            </Image>   -->
+
             <Grid Padding="40,0">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="18"/>
                     <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="18"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
                 <Image  Source="logo_splash.png" HorizontalOptions="Center" VerticalOptions="Center"/>
-                <Label Text="User Name" Grid.Row="1" TextColor="{StaticResource TextColor}" FontSize="Default" FontFamily="{StaticResource PoppinsRegular}"/>
+                <Label Text="User Name"  
+                       Grid.Row="1" TextColor="{StaticResource TextColor}" 
+                       FontSize="Default" FontFamily="{StaticResource PoppinsRegular}"/>
 
+                <Entry Text="{Binding Path=UserName, Mode=TwoWay}" 
+                       x:Name="UserNameEntry" FontSize="{StaticResource LittleSize}"
+                       Style="{StaticResource MyTextStyle}" Placeholder="User name" 
+                       FontFamily="{StaticResource PoppinsRegular}" 
+                       PlaceholderColor="{StaticResource PlaceHolderColor}" 
+                       Grid.Row="2" TextColor="White"/>
 
-                <!--Binding data to entry-->
-                <Entry Text="{Binding Path=UserName, Mode=TwoWay}" x:Name="UserNameEntry" FontSize="{StaticResource LittleSize}" Style="{StaticResource MyTextStyle}" Placeholder="User name" FontFamily="{StaticResource PoppinsRegular}" PlaceholderColor="{StaticResource PlaceHolderColor}" Grid.Row="2" TextColor="White"/>
+                <!--<controls:MyEntry Grid.Row="1" Text="{Binding Username}"/>  -->
 
                 <Label Text="Password" Grid.Row="3" TextColor="{StaticResource TextColor}" FontSize="Default" FontFamily="{StaticResource PoppinsRegular}"/>
 
                 <!--Binding data to entry-->
-                <Entry Text="{Binding Path=Password}" x:Name="Password" FontSize="{StaticResource LittleSize}" Style="{StaticResource MyTextStyle}" Placeholder="Password" FontFamily="{StaticResource PoppinsRegular}" PlaceholderColor="{StaticResource PlaceHolderColor}" IsPassword="True" Grid.Row="4" TextColor="White"/>
-                
+                <Entry Grid.Row="4" Text="{Binding Path=Password}" x:Name="Password" FontSize="{StaticResource LittleSize}" Style="{StaticResource MyTextStyle}" Placeholder="Password" FontFamily="{StaticResource PoppinsRegular}" PlaceholderColor="{StaticResource PlaceHolderColor}" IsPassword="True" TextColor="White"/>
 
-                <Label Text="Forgot Password?" Grid.Row="5" HorizontalTextAlignment="End" TextColor="White"/>
-
+                <Label Text="Forgot Password?" Grid.Row="5" HorizontalTextAlignment="End" TextColor="White">
+                    <Label.Effects>
+                        <effects:UnderlineTextEffect/>
+                    </Label.Effects>
+                </Label>
             </Grid>
-            <Button x:Name="SignUp" Command="{Binding LoginCommand}"  VerticalOptions="Start" BackgroundColor="White" Text="Sign In" Grid.Row="1" Margin="30,-30, 30, 0" HeightRequest="60"/>
+            <Button x:Name="SignUp" Command="{Binding LoginCommand}"  
+                    VerticalOptions="Start" BackgroundColor="White" 
+                    Text="Sign In" Grid.Row="1" Margin="30,-30, 30, 0" 
+                    HeightRequest="60"/>
 
             <!--Binding View-->
             <Grid Grid.Row="1">

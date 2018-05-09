@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Text;
 using SmartHotel.Mvvm.Commands;
 using SmartHotel.Services;
+using SmartHotel.Services.Authentications;
 using SmartHotel.ViewModels.Base;
 
 namespace SmartHotel.ViewModels
@@ -12,6 +13,8 @@ namespace SmartHotel.ViewModels
     {
         private string _userName;
         private string _password;
+
+        private IAuthenticationService _authenticationService;
         //private string _passwordStrength;
         public string UserName
         {
@@ -20,11 +23,13 @@ namespace SmartHotel.ViewModels
 
         }
 
-        public LoginViewModel()
+        public LoginViewModel(IAuthenticationService authenticationService)
         {
             LoginCommand = new DelegateCommand(Login, CanLogin).ObservesProperty(() => UserName)
                 .ObservesProperty(() => Password);
         }
+
+        
 
         private void Login()
         {
